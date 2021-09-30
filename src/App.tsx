@@ -1,7 +1,12 @@
 import React from "react";
 
 import "./App.css";
+import Bar from "./Components/Bar/Bar";
+import Button from "./Components/Button/Button";
+import Container from "./Components/Container/Container";
 import Greet from "./Components/Greet/Greet";
+import Heading from "./Components/Heading/Heading";
+import Input from "./Components/Input/Input";
 import Person from "./Components/Person/Person";
 import PersonList from "./Components/PersonList/PersonList";
 import Status from "./Components/Status/Status";
@@ -35,6 +40,22 @@ function App() {
       <Person name={personName} />
       <PersonList names={nameList} />
       <Status status="loading" />
+      <Heading>text rendered as childen of component</Heading>
+      <Bar>
+        <Heading>Text in child component</Heading>
+      </Bar>
+      <Greet name="Bond" logged={true} />
+      <Button
+        handleClick={(event, id) => {
+          alert("event prop onClick");
+          console.log("event prop onClick", event, id);
+        }}
+      />
+      <Input
+        value="random value"
+        handleChange={(event) => console.log(event)}
+      />
+      <Container styles={{ border: "1px solid black", padding: "1rem" }} />
     </div>
   );
 }

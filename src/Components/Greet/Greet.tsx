@@ -1,11 +1,12 @@
 import React from "react";
 type GreetProps = {
   name: string;
-  messages: number;
+  messages?: number;
   logged: boolean;
 };
 
 const Greet = (props: GreetProps) => {
+  // const { messages = 0 } = props;
   return (
     <div>
       <h3>Greet Component (simple params as props) </h3>
